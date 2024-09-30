@@ -1,0 +1,23 @@
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Set the version of Python
+build:
+  os: ubuntu-lts-latest
+  tools:
+    python: '3.12'
+
+# Configuration of the Python environment to be used
+python:
+  install:
+    - requirements: requirements/required.txt
+    - requirements: requirements/docs.txt
+    - requirements: docs/requirements.txt
+
+# Configuration for Sphinx documentation
+sphinx:
+  configuration: docs/conf.py
+  fail_on_warning: true
